@@ -47,11 +47,9 @@ def main():
     # Assuming config path is fixed
     cfg = load_config('configs/config.yaml')
     print("Configuration loaded.")
-
     # 2. Setup Device
-    device = torch.device(cfg['SYSTEM']['DEVICE'] if torch.cuda.is_available() else 'cpu')
-    print(f"Model initialized on {device}.")
-
+    device = torch.device(cfg['DEVICE'] if torch.cuda.is_available() else 'cpu')
+    print(f"Model initialized on {device}.")    
     # 3. Data Loading
     root_dir = cfg['DATA']['ROOT_DIR']
     train_dir = cfg['DATA']['TRAIN_DIR']

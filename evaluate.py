@@ -15,7 +15,9 @@ def evaluate_model(cfg):
     
     # 1. Setup
     device = torch.device(cfg['DEVICE'] if torch.cuda.is_available() else 'cpu')
-    
+    print(f"Using device: {device}")
+    root_dir=os.path.join(cfg['DATA']['ROOT_DIR'], cfg['DATA']['TEST_DIR']),
+    print('----->>>',root_dir)
     # 2. Data Loading (Test Set)
     test_transforms = get_transforms(cfg, split='test')
     test_dataset = NYUImageDepthDataset(

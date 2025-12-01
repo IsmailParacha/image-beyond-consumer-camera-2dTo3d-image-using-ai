@@ -2,16 +2,17 @@
 PROJECT: 'ImageClassification_v1'
 TASK: 'classification'
 SEED: 42 # For reproducibility (ensures random operations yield the same result)
-DEVICE: 'cpu' # Or 'cpu' if no GPU is available
+# GPU is available
+DEVICE: 'cuda' # Use 'cpu' if no GPU is available
 
 # === 2. Data Paths and Setup ===
 DATA:
-  ROOT_DIR: 'D:\Study\ibcc\nl\2d' # E.g., /home/user/my_project/data/
+  ROOT_DIR: 'E:\Imge beyound consumer camera\image-beyond-consumer-camera-2dTo3d-image-using-ai\' # E.g., /home/user/my_project/data/
   TRAIN_DIR: 'data\train' # Relative path inside ROOT_DIR
   VAL_DIR: 'data\val'
   TEST_DIR: 'data\test'
   NUM_CLASSES: 1 # Total number of categories
-  IMG_SIZE: 224 # Standard input size for many CNNs (224x224)
+  IMG_SIZE: 128 # Standard input size for many CNNs (224x224)
   CHANNELS: 3 # 3 for RGB images
 
 # === 3. Model Architecture ===
@@ -22,8 +23,8 @@ MODEL:
 
 # === 4. Training Hyperparameters ===
 TRAIN:
-  EPOCHS: 2
-  BATCH_SIZE: 32
+  EPOCHS: 30
+  BATCH_SIZE: 8
   LEARNING_RATE: 0.001
   OPTIMIZER: 'Adam' # Common choice: Adam, SGD, or AdamW
   WEIGHT_DECAY: 1e-4 # L2 regularization
